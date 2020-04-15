@@ -19,16 +19,6 @@ export const books = [
 const booksList = books.map((book) =>
     <li className="col-10 col-sm-6 col-md-4 col-lg-3">
         <div className="card border-success mb-3">
-            <div className="card-header">
-                <span className="">${book.price}</span>
-
-                <a href="/" className="float-right">
-                    <i className="fa fa-shopping-cart float-right"></i>
-                </a>
-                <a href="/" className="float-right mr-3">
-                    <i className="fa fa-heart float-left"></i>
-                </a>
-            </div>
             <div className="card-body">
                 <div className="text-primary mb-2">
                     <h5 className="card-title">{book.title}</h5>
@@ -39,6 +29,13 @@ const booksList = books.map((book) =>
                     <span className="card-text"><small>Auteur: {book.author}</small></span><br />
                     <span className="card-text"><small>isbn: {book.isbn}</small></span>
                 </div>
+            </div>
+            <div className="card-footer">
+                <span className="">${book.price}</span>
+
+                <a href="/" className="float-right">
+                    <i className="fa fa-shopping-cart float-right"></i>
+                </a>
             </div>
         </div>
     </li>
