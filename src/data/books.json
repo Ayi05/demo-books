@@ -1,18 +1,4 @@
-[
-{
-    "type": "header",
-    "version": "4.8.5",
-    "comment": "Export to JSON plugin for PHPMyAdmin"
-},
-{
-    "type": "database",
-    "name": "books"
-},
-{
-    "type": "table",
-    "name": "book",
-    "database": "books",
-    "data": 
+
 [
 {
     "id": "1",
@@ -21,6 +7,7 @@
     "subtitle": "Un CMS pour créer et gérer blogs et sites web",
     "author": "Christophe AUBRY",
     "isbn": "978-2-409-01883-1",
+    "cover": "https://splashbase.s3.amazonaws.com/unsplash/regular/tumblr_mnh0n9pHJW1st5lhmo1_1280.jpg",
     "year": "2019",
     "price": "39.92",
     "description": "WordPress est actuellement l'outil de création et de gestion de sites web le plus utilisé dans le monde. Ce CMS (Content Management System) vous permet de créer et de gérer des blogs, comme des sites web plus institutionnels et vous propose une interface de gestion de vos sites, simple mais très efficace.\r\n\r\nDans ce livre, vous commencerez par installer WordPress en local sur votre machine et chez les hébergeurs professionnels. Vous découvrirez ensuite l'interface de gestion de WordPress et apprendrez à configurer votre site.\r\n\r\nVous verrez ensuite comment créer le contenu rédactionnel de votre site : créer et gérer les articles à l’aide du nouvel éditeur Gutenberg, les organiser grâce aux catégories et mots-clefs, administrer la publication de vos articles, créer les pages et gérer les menus de navigation.\r\n\r\nVous verrez comment importer des médias dans la bibliothèque et vous compléterez vos contenus en y ajoutant des images. Pour rendre votre site attractif, vous pourrez générer de l'interaction avec les visiteurs grâce aux commentaires.\r\n\r\nSi plusieurs personnes sont amenées à travailler sur le contenu de votre site, vous pourrez exploiter les nombreuses fonctionnalités de WordPress relatives à la gestion des utilisateurs afin de définir des rôles donnant des droits spécifiques à chacun dans l'administration du site.\r\n\r\nVous verrez comment étendre les fonctionnalités natives de WordPress en installant des extensions (plugins) et comment modifier l'apparence de votre site grâce aux thèmes. Nous terminerons ce livre en apprenant à sauvegarder le site et à le restaurer, pour passer du site local, sur votre machine, au site de production, sur le Web."
@@ -32,6 +19,7 @@
     "subtitle": "extensions, widgets et thèmes avancés (théorie, TP, ressources) (3e édition)",
     "author": "Laurent DUMOULIN",
     "isbn": "978-2-409-01657-8",
+    "cover": "https://splashbase.s3.amazonaws.com/unsplash/regular/tumblr_mnh0n9pHJW1st5lhmo1_1280.jpg",
     "year": "2018",
     "price": "58.75",
     "description": "Ce livre sur WordPress (en version 4.9 au moment de l'écriture) s'adresse aux développeurs professionnels, autodidactes et passionnés ayant des connaissances en PHP. Il permet de comprendre les rouages de ce CMS et d'acquérir une maîtrise du développement d'extensions en PHP en suivant un apprentissage progressif.\r\n\r\nL'auteur présente l'interaction entre PHP et le backoffice du CMS à travers plusieurs exemples qui évoluent de la programmation procédurale vers la programmation orientée objet en passant par l'utilisation de requêtes SQL. Il présente ensuite l'interaction avec AJAX\/JSON.\r\n\r\nLe lecteur apprend à installer WordPress, à utiliser l'outil d'administration, à ajouter des fonctionnalités, à utiliser des extensions pour les développeurs, à enregistrer en base de données, à ajouter des tables pour maîtriser complètement les principes de fonctionnement du CMS et apprendre ensuite à réaliser des thèmes avancés, des widgets, des extensions. Une partie du livre traite de l'optimisation, de la sécurité, de la traduction, de la mise en ligne...\r\n\r\nLes fonctions propres à WordPress sont détaillées avec des exemples et mises en situation à travers des travaux pratiques : création et ajout de fonctionnalités dans l'administration d'un thème, création d'un thème à partir d'une maquette HTML, ajout d'un éditeur wysiwyg, création d'une extension fil d’Ariane, création d'un widget, création d'une extension Google Maps, création d'une extension avec un formulaire pour récupérer des adresses mails en AJAX\/JSON.\r\n\r\nDes liens vers le guide de références ainsi que le champ lexical utilisé donneront les clés nécessaires pour approfondir les connaissances sur un sujet précis."
@@ -43,6 +31,7 @@
     "subtitle": "Créez et gérez votre site web",
     "author": " Didier MAZIER",
     "isbn": "978-2-409-01130-6",
+    "cover": "https://xwvhig.sn.files.1drv.com/y4musV9gj7p3e7Vw_QjGqDXqHiyIR6QO3ekUhgWLARjW5AI-MoWcpBqo0uOObfPeDKcmZNbbQAcfp3uudItwTAcYRCmw6irr7px8kx4dlFMQasQDr2OJ4EftFjQxOhEVEibDSi4AqxFCPKKsGQnKYwqe-r-I4cYzLq1uWC1kx_H63JVFk7-DV8H-Qu2J0nJKefNghiFlET8X3Yp0qrrqQ7AGA?width=413&height=502&cropmode=none",
     "year": "2017",
     "price": "39.92",
     "description": "Joomla! est un des meilleurs CMS (Content Management System - Système de gestion de contenu) ; gratuit, il permet de créer des sites web puissants et se distingue de ses concurrents par des fonctionnalités nativement très poussées. Depuis la version 3, il propose une architecture MVC performante, un design responsif (s'adaptant aux mobiles) basé sur Bootstrap, une rapidité de traitement accrue ainsi que fiabilité et sécurité. La version 3.8, avec des avancées comme les champs personnalisables, offre des applications multiples : e-commerce, éducation, réseaux sociaux…\r\n\r\nCe livre s'adresse aux débutants comme aux utilisateurs plus aguerris qui veulent découvrir les atouts de la version 3.8. Il donne des explications détaillées étape par étape pour une prise en main progressive de cette version de Joomla! pour construire des sites performants.\r\n\r\nVous verrez comment installer et configurer un site sous Joomla!, comment tirer parti de la gestion avancée des droits d'accès et d'édition pour des utilisateurs multiples, comment gérer l'aspect graphique du site avec les templates (modèles graphiques) et comment utiliser des frameworks (plateformes de travail) qui vous feront gagner un temps précieux dans la personnalisation de votre site en vous évitant de tirer des lignes de code fastidieuses !\r\n\r\nVous comprendrez comment le contenu est structuré et comment déployer la meilleure organisation des articles, catégories, champs et modules."
@@ -54,6 +43,7 @@
     "subtitle": "Créer un site de e-commerce",
     "author": "Didier MAZIER",
     "isbn": "978-2-409-02310-1",
+    "cover": "https://via.placeholder.com/1024",
     "year": "2020",
     "price": "39.92",
     "description": "Avec ce livre, rédigé avec la version 1.7.6 de PrestaShop, suivez pas à pas toutes les étapes pour installer et paramétrer votre site e-commerce, depuis l'hébergement jusqu'au suivi de l'activité en passant par la personnalisation graphique. Apprenez à paramétrer la boutique pour organiser vos ressources (équipe, transporteurs...), en définir le périmètre (zones, pays...) et les conditions d'application (devises, taxes, modes de paiement, gestion des expéditions...). Structurez ensuite votre catalogue en définissant les catégories de produits, puis les marques distribuées et les fournisseurs auxquels vous ferez appel ; spécifiez les attributs et leurs valeurs ainsi que les caractéristiques avant de créer efficacement les produits proposés par votre site e-commerce.\r\n\r\nLes fonctions marketing et merchandising sont présentées en détail pour dynamiser les ventes avec des actions efficaces : produits phares, promotions, ventes croisées, navigation à facettes (filtrage de l'affichage des produits par critères)...\r\n\r\nVotre site est fin prêt, tous les réglages sont spécifiés, votre catalogue est terminé, les promotions sont en route... Place aux ventes ! Un chapitre est consacré au processus d'achat dans toutes ses étapes à la fois côté client (Front Office) et administration (Back Office) ; mettez en œuvre tous les mécanismes commerciaux clés du e-commerce, garants de la satisfaction de vos clients : retours produits, avoirs, relances des commandes..."
@@ -302,5 +292,3 @@
 }
 ]
 
-}
-]

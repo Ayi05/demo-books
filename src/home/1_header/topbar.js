@@ -43,7 +43,7 @@ const Topbar = (props) => {
                   size="sm"
                   type="submit"
                   className="btn btn-secondary">
-                  <i class="fa fa-search"></i>
+                  <i className="fa fa-search"></i>
                 </Button>
               </div>
 

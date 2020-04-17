@@ -1,57 +1,69 @@
-import React from 'react';
-// import { Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import React, { useState, useEffect } from 'react';
 
 
-export const books = [
-    { title: 'WordPress 5', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'React.Js', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'Node.Js', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'MySql', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'JavaScript', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'Bootstrap', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'Html5', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'Css3', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    // { title: 'Express.Js', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-];
+const Users = () => {
 
+    const [users, setUsers] = useState([]);
 
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users/')
+            .then(res => res.json())
+            .then(data => setUsers(data));
+    }, []);
 
-const booksList = books.map((book) =>
-    <li className="col-10 col-sm-6 col-md-4 col-lg-3">
-        <div className="card border-success mb-3">
-            <div className="card-header">
-                <span className="">${book.price}</span>
+    console.log(users);
 
-                <a href="/" className="float-right">
-                    <i className="fa fa-shopping-cart float-right"></i>
-                </a>
-                <a href="/" className="float-right mr-3">
-                    <i className="fa fa-heart float-left"></i>
-                </a>
+    return (
+        <div>
+            <div className="my-4">
+                <h3 className="text-center text-uppercase text-dark">Données Utilisateurs</h3>
+                <p className="text-center text-muted d-none d-md-block"><samp>(https://jsonplaceholder.typicode.com/users/)</samp></p>
             </div>
-            <div className="card-body">
-                <div className="text-primary mb-2">
-                    <h5 className="card-title">{book.title}</h5>
-                    <p className="card-text">{book.subtitle}</p>
-                </div>
-                <hr />
-                <div className="">
-                    <span className="card-text"><small>Auteur: {book.author}</small></span><br />
-                    <span className="card-text"><small>isbn: {book.isbn}</small></span>
-                </div>
+
+            {/* Visible only on xs and sm screen  */}
+            <div className="border d-md-none">
+                <table className="table table-md table-hover">
+                    <thead className="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Company</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map(user => (
+                            <tr className="" key={user}>
+                                <td><small>{user.name}</small></td>
+                                <td><small>{user.company.name}</small></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+
+            {/* Visible only on md screen and above */}
+            <div className="border d-none d-md-block">
+                <table className="table table-md table-hover">
+                    <thead className="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>E-Mail</th>
+                            <th>City</th>
+                            <th>Company</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map(user => (
+                            <tr className="" key={user}>
+                                <td><small>{user.name}</small></td>
+                                <td><small>{user.email}</small></td>
+                                <td><small>{user.address.city}</small></td>
+                                <td><small>{user.company.name}</small></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
-    </li>
-)
-
-const Prog = (props) => {
-    return (
-        <ul className="row" style={{ listStyleType: "none" }}>
-
-            {booksList}
-
-        </ul>
-    );
+    )
 };
-
-export default Prog;
+export default Users;
