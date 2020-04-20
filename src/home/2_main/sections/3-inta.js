@@ -1,56 +1,65 @@
 import React from 'react';
+import data from '../../../data/booksDB.json';
 
 
-export const books = [
-    { title: 'WordPress 5', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'React.Js', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'Node.Js', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'MySql', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'JavaScript', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'Bootstrap', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'Html5', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'Css3', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-    { title: 'Express.Js', subtitle: 'Un CMS pour créer et gérer blogs et sites web', author: 'Christophe AUBRY', price: '39.92' },
-];
+const Inta = () => {
 
+    return (
+        <div>
+            {/* <div className="my-4">
+                <h3 className="text-center text-uppercase text-dark">Données Utilisateurs</h3>
+                <p className="text-center text-muted d-none d-md-block"><samp>(https://jsonplaceholder.typicode.com/users/)</samp></p>
+            </div> */}
 
-
-const booksList = books.map((bookIa) =>
-    <li className="col-10 col-sm-6 col-md-4 col-lg-3" key={bookIa}>
-        <div className="card border-success mb-3">
-            <div className="card-header">
-                <span className="">${bookIa.price}</span>
-
-                <a href="/" className="float-right">
-                    <i className="fa fa-shopping-cart float-right"></i>
-                </a>
-                <a href="/" className="float-right mr-3">
-                    <i className="fa fa-heart float-left"></i>
-                </a>
+            {/* Visible only on xs and sm screen  */}
+            <div className="border d-md-none">
+                <table className="table table-md table-hover">
+                    <thead className="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Company</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map(bookIa => (
+                            <tr className="" key={bookIa}>
+                                <td><small>{bookIa.title}</small></td>
+                                <td><small>{bookIa.author}</small></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
-            <div className="card-body">
-                <div className="text-primary mb-2">
-                    <h5 className="card-title">{bookIa.title}</h5>
-                    <p className="card-text">{bookIa.subtitle}</p>
-                </div>
-                <hr />
-                <div className="">
-                    <span className="card-text"><small>Auteur: {bookIa.author}</small></span><br />
-                    <span className="card-text"><small>isbn: {bookIa.isbn}</small></span>
-                </div>
+
+            {/* Visible only on md screen and above */}
+            <div className="row">
+            <div className="col-3"></div>
+            <div className="border d-none d-md-block col-9">
+                <table className="table table-md table-hover">
+                    <thead className="bg-light">
+                        <tr>
+                            {/* <th>Name</th> */}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map(bookIa => (
+                            <tr className="" key={bookIa}>
+                                <td className="row">
+                                    <img src = {bookIa.cover} className="ml-3" style={{height:150}} alt="..."></img>
+                                    <div className="ml-3">
+                                        <small><h4>{bookIa.title}</h4></small>
+                                        <small><h5 className="text-muted">{bookIa.subtitle}</h5></small><br></br>
+                                        <span>{bookIa.author}</span><br></br>
+                                        <span>{bookIa.price}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
             </div>
         </div>
-    </li>
-)
-
-const Inta = (props) => {
-    return (
-        <ul className="row" style={{ listStyleType: "none" }}>
-
-            {booksList}
-
-        </ul>
-    );
+    )
 };
-
 export default Inta;
