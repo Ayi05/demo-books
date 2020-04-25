@@ -1,13 +1,17 @@
 import React from 'react';
 import data from '../../data/booksDB.json';
 
+const ac = data;
+// const cms = data.filter((book) => {
+//     return book.category === "langage";
+// })
 
-const booksList = data.map((bookAll) =>
-    <li className="col-10 col-sm-6 col-md-4 col-lg-4" key={bookAll}>
+const booksList = ac.map((book) =>
+    <li className="col-10 col-sm-6 col-md-4 col-lg-4" key={book}>
         <div className="card border-success my-3">
-            <img src = {bookAll.cover} className="card-img-top" alt="..."></img>
+            <img src = {book.cover} className="card-img-top" alt="..."></img>
             <div className="card-footer">
-                <span className="font-weight-bold">${bookAll.price}</span>
+                <span className="font-weight-bold">${book.price}</span>
 
                 <a href="/" className="float-right">
                     <i className="fa fa-shopping-cart float-right"></i>
