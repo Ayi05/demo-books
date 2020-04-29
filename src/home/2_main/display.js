@@ -1,114 +1,68 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import data from '../../data/booksDB.json';
 
-// import Users from './sections/users'
-// import Products from './sections/1-all'
-// import Conversion from './sections/conversion'
 
-import All from './sections/1-all';
-import Cms from './sections/2-cms';
-import Inta from './sections/3-inta';
-import Prog from './sections/4-prog';
+const Display = (props) => {
 
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
+    const [category, setCategory] = React.useState("");
 
-    return (
-        <Typography
-            component="div"
-            role="tabpanel"
-            hidden={value !== index}
-            id={`nav-tabpanel-${index}`}
-            aria-labelledby={`nav-tab-${index}`}
-            {...other}
-        >
-            {value === index && <Box p={3}>{children}</Box>}
-        </Typography>
-    );
-}
+    const handleAll = () => {
+        setCategory("");
+    }
+    const handleCms = () => {
+        setCategory("cms");
+    }
+    const handleIa = () => {
+        setCategory("ia");
+    }
+    const handleLp = () => {
+        setCategory("langage");
+    }
 
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    value: PropTypes.any.isRequired,
-};
+    const list = data.filter((book) => {
+        if (category === "") {
+            return data;
+        } else {
+            return book.category === category;
+        }
+    })
 
-function a11yProps(index) {
-    return {
-        id: `nav-tab-${index}`,
-        'aria-controls': `nav-tabpanel-${index}`,
-    };
-}
-
-function LinkTab(props) {
-    return (
-        <Tab
-            component="a"
-            onClick={event => {
-                event.preventDefault();
-            }}
-            {...props}
-        />
-    );
-}
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper,
-    },
-}));
-
-export default function Display() {
-    const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+    const books = list.map((book) =>
+        <li className="col-5 col-sm-4 col-md-3 col-lg-3" key={book}>
+            <div className="card border-success mb-5">
+                <img src={book.cover} className="card-img-top" alt="..."></img>
+                <div className="card-footer">
+                    <span className="font-weight-bold">${book.price}</span>
+                    <a href="/" className="float-right">
+                        <i className="fa fa-shopping-cart float-right"></i>
+                    </a>
+                </div>
+            </div>
+        </li>
+    )
 
     return (
-        <div className={classes.root}>
-            <AppBar position="static">
-                <Tabs
-                    variant="fullWidth"
-                    value={value}
-                    onChange={handleChange}
-                    aria-label="nav tabs example"
-                >
-                    <LinkTab label="Toutes les Catégories" {...a11yProps(0)} />
-                    <LinkTab label="Gestion de Contenu" {...a11yProps(1)} />
-                    <LinkTab label="Intelligence Artificielle" {...a11yProps(2)} />
-                    <LinkTab label="Langage de Programmation" {...a11yProps(3)} />
+        <div className="row my-5">
 
-                    {/* <LinkTab label="Conversion" {...a11yProps(0)} />
-                    <LinkTab label="Utilisateurs" {...a11yProps(1)} />
-                    <LinkTab label="Toutes les Catégories" {...a11yProps(2)} /> */}
-                </Tabs>
-            </AppBar>
+            <div className="col-lg-3">
 
-            <TabPanel value={value} index={0}>
-                <All></All>
-            </TabPanel>
+                <div className="btn-group-vertical mb-4">
+                    <button type="button" className="btn btn-outline-info text-left" onClick={handleAll}>Toutes les Categories</button>
+                    <button type="button" className="btn btn-outline-info text-left" onClick={handleCms}>Gestion de Contenu (CMS)</button>
+                    <button type="button" className="btn btn-outline-info text-left" onClick={handleIa}>Intelligence Artificielle (IA)</button>
+                    <button type="button" className="btn btn-outline-info text-left" onClick={handleLp}>Langage de Programmation</button>
+                </div>
 
-            <TabPanel value={value} index={1}>
-                <Cms></Cms>
-            </TabPanel>
+            </div>
 
-            <TabPanel value={value} index={2}>
-                <Inta></Inta>
-            </TabPanel>
-
-            <TabPanel value={value} index={3}>
-                <Prog></Prog>
-            </TabPanel>
+            <div className="col-lg-9">
+                <ul className="row" style={{ listStyleType: "none" }}>
+                    {books}
+                </ul>
+            </div>
 
         </div>
     );
-}
+};
+
+export default Display;

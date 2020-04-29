@@ -8,7 +8,7 @@ const Topbar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar className="mb-5" color="dark" dark expand="md">
+    <Navbar className="mb-5 sticky-top" color="dark" dark expand="md">
 
       <div className="container">
 

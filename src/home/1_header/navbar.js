@@ -7,10 +7,11 @@ const Navbar = props => {
     <nav className="container navbar navbar-expand-lg navbar-light sticky-top shadow p-2 bg-light wow fadeIn">
 
       <div className="container">
-        <a className="navbar-brand" href="https://ajavonweb.ca/">
-          <img src="./icon.png" alt="logo" style={{ width: "30px" }} />
+        {/* <a className="navbar-brand" href="https://ajavonweb.ca/"> */}
+        <a className="navbar-brand" href="/">
+          <img src="./icon.png" alt="logo" className="mb-2" style={{ width: "30px" }} />
           {/* <h2 className="d-inline"><small className="text-sm-left font-weight-bold mx-1">AJ-Web</small></h2> */}
-          <h2 className="d-inline"><small className="text-sm-left text-info font-weight-bold mx-1">Livre-TI</small></h2>
+          <h1 className="d-inline"><small className="text-sm-left text-info font-weight-bold mx-1">Livre-TI</small></h1>
         </a>
 
         <div className="d-flex justify-content-end">
