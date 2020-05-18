@@ -28,16 +28,19 @@ const Display = (props) => {
     })
 
     const books = list.map((book) =>
+        
         <li className="col-5 col-sm-4 col-md-3 col-lg-3" key={book}>
+            <a href="/">
             <div className="card border-success mb-5">
                 <img src={book.cover} className="card-img-top" alt="..."></img>
                 <div className="card-footer">
                     <span className="font-weight-bold">${book.price}</span>
-                    <a href="/" className="float-right">
+                    {/* <a href="/" className="float-right">
                         <i className="fa fa-shopping-cart float-right"></i>
-                    </a>
+                    </a> */}
                 </div>
             </div>
+            </a>
         </li>
     )
 
